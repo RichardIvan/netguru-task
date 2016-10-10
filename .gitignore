@@ -1,0 +1,12 @@
+node_modules
+coverage
+.nyc_output
+npm-debug.*
+flow-typed
+analyze.json
+stats
+Dockerfile
+interfaces
+webpack
+docker-compose.yml
+docker

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'AllerDisplay';
+  src: url('../fonts/AllerDisplay.ttf');
+}
+
+* {
+  font-family: 'AllerDisplay';
+  box-sizing: border-box;
+}
