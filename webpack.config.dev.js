@@ -157,7 +157,7 @@ module.exports = {
     inline: true,
     // https: true,
     host: '0.0.0.0',
-    port: 443,
+    port: 80,
     contentBase: './src/client/',
     // historyApiFallback: true,
     // quiet: false,

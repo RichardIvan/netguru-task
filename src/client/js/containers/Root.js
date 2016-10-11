@@ -5,12 +5,11 @@ import m from 'mithril'
 
 import '../../sass/main.sass'
 
-// import rootComponent
+import rootComponent from '../components/root-component'
 
 const RootContainer = {
   view (vnode) {
-    console.log(vnode)
-    return m('', `yes hi`)
+    return m(rootComponent, { ...vnode.attrs })
   }
 }
 

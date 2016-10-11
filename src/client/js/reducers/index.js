@@ -1,21 +1,23 @@
 /* @flow */
 'use strict'
 
-import { combineReducers } from 'rereduce'
+import { combineReducers } from 'redux'
 
-// import componentsState from './components-state'
+import buttons from './buttons'
+import gameInfo from './game-info/'
 // import user from './user'
 // import settings from './settings'
 // import currentGame from './current-game'
 // import highscores from './highscores'
 
 const root = combineReducers({
+  buttons,
+  gameInfo
   // componentsState,
   // user,
   // settings,
   // currentGame,
   // highscores
 })
-
 
 export default root

@@ -1,0 +1,34 @@
+:global(.controls)
+  position: relative
+  height: 100%
+  width: 100%
+
+  :global(ul)
+    position: absolute
+    list-style: none
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: row
+    padding: 0
+    margin: 0
+
+  .button:last-child
+    margin-left: 0
+
+  .button
+    display: flex
+    background: #E6E6E7
+    justify-content: space-around
+    margin-right: 5px
+    border-radius: 5px
+    flex: 1
+
+  :global(.active)
+    background: rgba(85, 83, 93, 0.97)
+
+  .letter
+    color: #FFFFFF
+    font-size: 2em
+    text-transform: uppercase
+    align-self: center

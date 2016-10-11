@@ -13,17 +13,27 @@
     "build": "npm run build-client && npm run build-server",
     "dev-server": "nodemon ./server.js --exec babel-node",
     "dev": "webpack-dev-server --config webpack.config.dev.js",
-    "test": "ava --watch"
+    "test": "ava"
   },
   "ava": {
     "files": [
-      "src/**/*.spec.js",
-      "src/tests/**/*.js"
+      "src/**/*.spec.js"
     ],
     "require": [
-      "babel-register"
+      "babel-register",
+      "./src/tests/client/setup.js"
     ],
-    "babel": "inherit"
+    "babel": {
+      "presets": [
+        [
+          "es2015",
+          {
+            "modules": "commonjs"
+          }
+        ],
+        "stage-2"
+      ]
+    }
   },
   "standard": {
     "ignore": [
@@ -62,7 +72,10 @@
     "gulp-clean": "^0.3.2",
     "gulp-jscpd": "0.0.7",
     "html-webpack-plugin": "^2.22.0",
+    "ignore-styles": "^5.0.1",
+    "lodash": "^4.16.4",
     "mithril": "github:lhorie/mithril.js#rewrite",
+    "mithril-query": "github:stephanhoyer/mithril-query#rewrite",
     "node-sass": "^3.10.1",
     "nodemon": "^1.10.2",
     "nyc": "^8.3.0",

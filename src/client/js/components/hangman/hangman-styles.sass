@@ -1,0 +1,136 @@
+$sectionHeight: 200px
+$armHeight: 19%
+$armWidth: 26%
+$armMargin: -32px
+
+.hangman-container
+  position: relative
+  height: 100%
+
+  $sectionHeight: calc(height / 3)
+  display: flex
+  flex-direction: row
+  $sectionWidth: width
+
+  :global(.left-side)
+    flex: 1
+    position: relative
+    width: 100%
+
+
+  :global(.inner)
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    position: absolute
+    height: 100%
+    width: 100%
+    min-width: 300px
+    margin-left: -72px
+
+  :global(.right-side)
+    flex: 1
+  :global(img)
+    width: 100%
+
+
+  .bar
+    position: absolute
+    top: 0%
+    // left: 2%
+    height: 7%
+    width: 54%
+
+  .head
+    position: absolute
+    top: 6%
+    margin: 0 30%
+    height: 25%
+    width: 38%
+    z-index: 1
+
+  .neck
+    position: absolute
+    height: 6%
+    width: 10%
+    top: 28%
+    left: 44%
+
+  .corpus
+    position: absolute
+    flex: 1
+    top: 33%
+    height: 25%
+    left: 37%
+    width: 25%
+
+  .right-arm
+    position: absolute
+    top: 33%
+    right: 21.5%
+    height: $armHeight
+    width: $armWidth
+    z-index: 1
+    // margin-left: $armMargin
+    // margin-top: -1%
+
+  .right-hand
+    position: absolute
+    top: 48.2%
+    right: 20.3%
+    height: 4%
+    width: 6%
+
+  .left-arm
+    position: absolute
+    top: 33%
+    left: 20.5%
+    height: $armHeight
+    width: $armWidth
+    z-index: 1
+
+  .left-hand
+    position: absolute
+    top: 48%
+    left: 19.5%
+    height: 4%
+    width: 6%
+
+  // .right-leg-section
+  //   position: absolute
+  //   // flex: 1
+  //   left: 50%
+
+  .left-leg
+    position: absolute
+    left: 29%
+    top: 55%
+    height: 25%
+    width: 20%
+    z-index: 1
+
+  .right-leg
+    position: absolute
+    width: 100%
+    right: 30%
+    top: 55%
+    height: 25%
+    width: 20%
+    z-index: 1
+
+  .left-foot
+    position: absolute
+    width: 100%
+    left: 21%
+    top: 77%
+    height: 6%
+    width: 18%
+
+
+  .right-foot
+    position: absolute
+    right: 22%
+    top: 78%
+    height: 5.5%
+    width: 18%
+    transform: rotateY(180deg)

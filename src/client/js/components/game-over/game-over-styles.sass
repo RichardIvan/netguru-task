@@ -1,0 +1,42 @@
+:global(.game-over-container)
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+
+  background: #000
+  z-index: 2
+  opacity: 0.5
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  transform: translateY(0%)
+
+  h1, button
+    text-transform: uppercase
+
+  h1
+    color: #FFFFFF
+    font-size: 4em
+
+  button
+    color: #FEB901
+    border: none
+    border: 3px dashed #FEB901
+    border-radius: 50px 50px
+    // border-bottom: 3px dashed #E3AD20
+    z-index: 3
+    background: none
+    height: 7%
+    width: 12%
+    font-size: 1em
+    position: relative
+    padding: 0
+    margin: 0
+
+:global(.active)
+  transform: translateY(0)

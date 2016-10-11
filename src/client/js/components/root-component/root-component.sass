@@ -1,0 +1,47 @@
+.container
+  position: relative
+  width: 100%
+  margin: 12vh 10vw
+  // min-width: 1620px
+
+.game-card
+  background: #F5F5F5
+  flex-direction: column
+  position: absolute
+  width: 100%
+  height: 100%
+  border-radius: 10px
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6)
+  display: flex
+  overflow: hidden
+  padding: 72px
+
+.game-card::after
+  background: #4D71FA
+  position: absolute
+  bottom: -50%
+  right: -50%
+  // height: calc(100% / 2)
+  height: 100%
+  transform-origin: top left
+  transform: rotate(45deg)
+  width: calc(100% / 2)
+  // clip: rect(20px,60px,30px,30px)
+  content: ''
+  // height: 100px
+  // width: 100px
+
+.display-container
+  display: flex
+  flex-direction: row
+  flex-grow: 1
+
+.controls-container
+  height: 75px
+  z-index: 1
+
+.hangman, .game-info
+  flex: 1
+
+.game-info
+  background: #F5F5F5
