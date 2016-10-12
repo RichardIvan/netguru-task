@@ -1,3 +1,6 @@
+$activeStoneColor: rgba(85, 83, 93, 0.97)
+$missedStoneColor: lighten($activeStoneColor, 30%)
+
 :global(.controls)
   position: relative
   height: 100%
@@ -18,8 +21,6 @@
 
   .stone
     display: flex
-    // flex: 1
-    // justify-content: space-around
     position: relative
 
   button
@@ -29,13 +30,16 @@
     margin-right: 5px
     border-radius: 5px
     border: none
-    height: 75px
 
   li:last-child > button
     margin-right: 0
 
   :global(.active)
-    background: rgba(85, 83, 93, 0.97)
+    background: $activeStoneColor
+
+  :global(.missed)
+    background: $missedStoneColor
+
 
   .letter
     color: #FFFFFF

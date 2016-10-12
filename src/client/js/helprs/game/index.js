@@ -46,9 +46,11 @@ export function uniqueArray (minRange = 1, maxRange = 100, arrayLength = 10) {
   return array
 }
 
-export function fillButton (letter: string) {
-  return {
-    class: !letter ? '' : 'active',
-    letter: !letter ? '' : letter
+export function fillButton (classStr) {
+  return (letter) => {
+    return {
+      class: !letter ? '' : classStr,
+      letter: !letter ? '' : letter
+    }
   }
 }
