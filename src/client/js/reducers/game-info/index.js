@@ -7,7 +7,8 @@
 
 import {
   NEW_WORD,
-  SUBMIT_GUESS
+  SUBMIT_GUESS,
+  GAME_PROGRESS
 } from '../../actions/constants'
 
 import {
@@ -93,6 +94,11 @@ const reducer = (state = initialState, action) => {
         }
       }
     }
+    case GAME_PROGRESS:
+      return {
+        ...state,
+        gameInProgress: action.payload.status
+      }
     default:
       return state
   }

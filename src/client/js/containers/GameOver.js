@@ -11,14 +11,21 @@ import {
   getGameProgress
 } from '../selectors/game-info/'
 
+import {
+  gameInProgress
+} from '../actions/game'
+
 const gameOverContainer = {
   view (vnode) {
     return m(gameOverComponent, {
       overlayAttrs: {
-        class: getGameProgress(vnode.attrs.state) ? '' : 'active'
+        class: getGameProgress(vnode.attrs.state) ? 'inactive' : 'active'
       },
       buttonAttrs: {
-        onclick: () => newGame(vnode.attrs.dispatch)
+        onclick: () => {
+          newGame(vnode.attrs.dispatch)
+          vnode.attrs.dispatch(gameInProgress(true))
+        }
       }
     })
   }

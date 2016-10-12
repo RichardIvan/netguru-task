@@ -6,7 +6,8 @@ import test from 'ava'
 import reducer, { initialState } from '../'
 
 import {
-  submitGuess
+  submitGuess,
+  gameInProgress
 } from '../../../actions/game'
 
 import {
@@ -230,4 +231,19 @@ test('incorrect and final SUBMIT_GUESS sets game progress to false', t => {
   t.is($out.gameInProgress, true)
   t.is(reducer($out, submitGuess('a')).numberOfIncorrectGuesses, $expected + 1)
   t.is(reducer($out, submitGuess('a')).gameInProgress, false)
+})
+
+test('GAME_PROGRESS sets the correct state', t => {
+  const action = gameInProgress(true)
+  const action2 = gameInProgress(false)
+  let state = t.context.state
+  state.gameInProgress = false
+
+  const $out = reducer(state, action)
+  const $out2 = reducer($out, action2)
+  const $expected = true
+  const $expected2 = false
+
+  t.is($out.gameInProgress, $expected)
+  t.is($out2.gameInProgress, $expected2)
 })

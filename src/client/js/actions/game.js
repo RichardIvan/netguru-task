@@ -3,7 +3,8 @@
 
 import {
   NEW_WORD,
-  SUBMIT_GUESS
+  SUBMIT_GUESS,
+  GAME_PROGRESS
 } from './constants'
 
 import {
@@ -40,6 +41,15 @@ export function submitGuess (letter) {
     type: SUBMIT_GUESS,
     payload: {
       letter
+    }
+  }
+}
+
+export function gameInProgress(status) {
+  return {
+    type: GAME_PROGRESS,
+    payload: {
+      status
     }
   }
 }
