@@ -2,7 +2,6 @@ import m from 'mithril'
 
 import { configureStore } from '../store'
 import { newGame as startGame } from '../helprs/game/'
-// import { startResponsiveStateService } from '../services/mobile-state'
 
 import {
   attachStoreToComponent
@@ -20,7 +19,6 @@ import Root from './Root'
 const store = configureStore()
 startGame(store.dispatch)
 
-// startResponsiveStateService(store)
 setupKeyBoardControls(store)
 
 export function mountRoot (el) {
