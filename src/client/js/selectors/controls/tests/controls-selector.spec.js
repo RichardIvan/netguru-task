@@ -6,11 +6,11 @@ import test from 'ava'
 import isPlainObject from 'lodash/isPlainObject'
 
 import { getButtonsData } from '../'
-import { initialState } from '../../../reducers/buttons'
+import { initialState } from '../../../reducers/game-info/'
 
 test('has initial state of eleven items', t => {
   const state = {
-    buttons: initialState
+    gameInfo: initialState
   }
   const buttons = getButtonsData(state)
   t.is(buttons.length, 11)

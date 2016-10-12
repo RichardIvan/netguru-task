@@ -3,10 +3,10 @@
 
 import { combineReducers } from 'redux'
 
-import buttons from './buttons'
+import gameInfo from './game-info/'
 
 const root = combineReducers({
-  buttons
+  gameInfo
 })
 
 export default root

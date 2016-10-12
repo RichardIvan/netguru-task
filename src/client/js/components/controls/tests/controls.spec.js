@@ -8,11 +8,11 @@ import mq from 'mithril-query'
 import controlsComponent from '../'
 
 import { getButtonsData } from '../../../selectors/controls/'
-import { initialState } from '../../../reducers/buttons'
+import { initialState } from '../../../reducers/game-info/'
 
 test('Controls element has 11 items', t => {
   const state = {
-    buttons: initialState
+    gameInfo: initialState
   }
 
   const component = mq(controlsComponent, {

@@ -9,7 +9,7 @@ export function newGame (dispatch) {
     xhttp.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
       // document.getElementById("demo").innerHTML = this.responseText;
-        resolve(JSON.parse(this.response))
+        resolve(JSON.parse(this.response.toLowerCase()))
       }
     }
     xhttp.onerror = () => reject('I\'m very sad now')

@@ -42,7 +42,8 @@ test.beforeEach(t => {
         ]
       },
       lettersToGuess: {
-        d: [3]
+        d: [3],
+        o: [7, 8]
       },
       word: 'word'
     }
@@ -122,13 +123,14 @@ test('reducer sets new lettersToGuess on NEW_WORD actions type', t => {
 
   const $out = reducer(state, action)
   const $expected = {
-    d: [10]
+    d: [10],
+    o: [7, 8]
   }
 
   t.deepEqual($out.lettersToGuess, $expected)
 })
 
-test.only('NEW_WORD resets missedLetters array', t => {
+test('NEW_WORD resets missedLetters array', t => {
   const state = t.context.state
   const action = t.context.action
 
@@ -137,7 +139,7 @@ test.only('NEW_WORD resets missedLetters array', t => {
   t.deepEqual($out.missedLetters, $expected)
 })
 
-test.only('NEW_WORD sets the gameProgress to true', t => {
+test('NEW_WORD sets the gameProgress to true', t => {
   let state = t.context.state
   state.gameProgress = false
   const action = t.context.action
@@ -148,7 +150,7 @@ test.only('NEW_WORD sets the gameProgress to true', t => {
   t.is($out.gameInProgress, $expected)
 })
 
-test.only('incorrect SUBMIT_GUESS, increases incorect numberOf guesses', t => {
+test('incorrect SUBMIT_GUESS, increases incorect numberOf guesses', t => {
   const action = submitGuess('a')
   const state = t.context.state
 
@@ -159,7 +161,7 @@ test.only('incorrect SUBMIT_GUESS, increases incorect numberOf guesses', t => {
   t.is(reducer($out, submitGuess('k')).numberOfIncorrectGuesses, $expected + 1)
 })
 
-test.only('correct SUBMIT_GUESS, does not increas incorect numberOf guesses', t => {
+test('correct SUBMIT_GUESS, does not increas incorect numberOf guesses', t => {
   const action = submitGuess('d')
   const state = t.context.state
 
@@ -169,7 +171,7 @@ test.only('correct SUBMIT_GUESS, does not increas incorect numberOf guesses', t 
   t.is($out.numberOfIncorrectGuesses, $expected)
 })
 
-test.only('correct SUBMIT_GUESS, removes the letter from lettersToGuess', t => {
+test('correct SUBMIT_GUESS, removes the letter from lettersToGuess', t => {
   const action = submitGuess('d')
   const state = t.context.state
 
@@ -181,7 +183,7 @@ test.only('correct SUBMIT_GUESS, removes the letter from lettersToGuess', t => {
   t.deepEqual($out.lettersToGuess, $expected)
 })
 
-test.only('correct SUBMIT_GUESS, reveals correct letters in buttonData', t => {
+test('correct SUBMIT_GUESS, reveals correct letters in buttonData', t => {
   const action = submitGuess('d')
   const state = t.context.state
 
@@ -206,7 +208,7 @@ test.only('correct SUBMIT_GUESS, reveals correct letters in buttonData', t => {
   })
 })
 
-test.only('incorrect SUBMIT_GUESS, adds the letter to missedLetters array', t => {
+test('incorrect SUBMIT_GUESS, adds the letter to missedLetters array', t => {
   const action = submitGuess('f')
   const state = t.context.state
 
@@ -216,7 +218,7 @@ test.only('incorrect SUBMIT_GUESS, adds the letter to missedLetters array', t =>
   t.deepEqual($out.missedLetters, $expected)
 })
 
-test.only('incorrect and final SUBMIT_GUESS sets game progress to false', t => {
+test('incorrect and final SUBMIT_GUESS sets game progress to false', t => {
   const action = submitGuess('a')
   let state = t.context.state
   state.numberOfIncorrectGuesses = 9

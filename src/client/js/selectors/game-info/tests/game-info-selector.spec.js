@@ -10,14 +10,14 @@ import {
 
 test('getMissedLetters gets correct array of letters', t => {
   const initialState = {
-    buttons: {
+    gameInfo: {
       missedLetters: []
     }
   }
   t.deepEqual(getMissedLetters(initialState), [])
 
   const state = {
-    buttons: {
+    gameInfo: {
       missedLetters: ['a', 'b', 'c']
     }
   }
@@ -26,13 +26,13 @@ test('getMissedLetters gets correct array of letters', t => {
 
 test('getGameProgress gets the correct progress', t => {
   const state = {
-    buttons: {
+    gameInfo: {
       gameInProgress: true
     }
   }
   t.is(getGameProgress(state), true)
   const newState = {
-    buttons: {
+    gameInfo: {
       gameInProgress: false
     }
   }
