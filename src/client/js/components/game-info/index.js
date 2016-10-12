@@ -5,7 +5,7 @@ import m from 'mithril'
 
 import styles from './game-info-styles.sass'
 
-export function createMissedLetters (letter) {
+export function createMissedLetter (letter) {
   return m('li', m(`span.${styles.letter}`, letter))
 }
 
@@ -14,7 +14,7 @@ const gameInfoComponent = {
     return m('.game-info-container', [
       m('h3', 'You missed:'),
       m('ul', [
-        vnode.attrs.missedLetters.map(createMissedLetters)
+        vnode.attrs.missedLetters.map(createMissedLetter)
       ])
     ])
   }
