@@ -46,18 +46,10 @@ export const initialState = {
   missedLetters: []
 }
 
-// has new word action type
-
 const reducer = (state = initialState, action) => {
   if (!action || !action.type) return state
   switch (action.type) {
     case NEW_WORD: {
-      // const word = action.payload.word.split('')
-      // const wordLength = word.length
-      // const numberOfEmptyButtons = 11 - wordLength
-      // let emptyButtons = new Array(numberOfEmptyButtons).fill('')
-      // emptyButtons = emptyButtons.map(fillButton)
-      // const array = emptyButtons.concat(word.map(fillButton))
       const newState = {
         ...state,
         missedLetters: [],
