@@ -11,9 +11,10 @@ import {
 
 export function setupKeyBoardControls (store) {
   const dispatch = store.dispatch
-  const state = store.getState()
 
   window.addEventListener('keyup', (e) => {
+    const state = store.getState()
+
     if (isGameInProgress(state) && e.keyCode >= 65 && e.keyCode <= 90) {
       const letter = e.key
       dispatch(submitGuess(letter))
