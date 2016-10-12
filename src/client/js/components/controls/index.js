@@ -17,22 +17,19 @@ export function createButton (elSize = 75, data) {
 }
 
 const controlsComponent = {
-  view (pVnode) {
+  view (parentVnode) {
     return m('.controls', m('ul', {
         oncreate (vnode) {
           window.onresize = (e) => {
-            pVnode.state.elementWidth = vnode.dom.getBoundingClientRect().width / 11 - 5
+            parentVnode.state.elementWidth = vnode.dom.getBoundingClientRect().width / 11 - 5
             m.redraw()
           }
-          pVnode.state.elementWidth = vnode.dom.getBoundingClientRect().width / 11 - 5
+          parentVnode.state.elementWidth = vnode.dom.getBoundingClientRect().width / 11 - 5
           m.redraw()
-        },
-        onbeforeupdate (vnode) {
-          console.log(vnode.state.elementWidth)
         }
       }, [
-        pVnode.attrs.buttonData.map((item) => {
-          return createButton(pVnode.state.elementWidth, item)
+        parentVnode.attrs.buttonData.map((item) => {
+          return createButton(parentVnode.state.elementWidth, item)
         })
       ]))
   }
