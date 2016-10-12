@@ -13,27 +13,17 @@
     "build": "npm run build-client && npm run build-server",
     "dev-server": "nodemon ./server.js --exec babel-node",
     "dev": "webpack-dev-server --config webpack.config.dev.js",
-    "test": "ava"
+    "test": "ava -w -v"
   },
   "ava": {
     "files": [
-      "src/**/*.spec.js"
+      "src/**/tests/*.spec.js"
     ],
     "require": [
       "babel-register",
       "./src/tests/client/setup.js"
     ],
-    "babel": {
-      "presets": [
-        [
-          "es2015",
-          {
-            "modules": "commonjs"
-          }
-        ],
-        "stage-2"
-      ]
-    }
+    "babel": "inherit"
   },
   "standard": {
     "ignore": [

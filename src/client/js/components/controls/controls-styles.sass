@@ -16,13 +16,20 @@
   .button:last-child
     margin-left: 0
 
-  .button
+  .stone
     display: flex
-    background: #E6E6E7
+    flex: 1
     justify-content: space-around
+    position: relative
+
+  button
+    background: #E6E6E7
+    height: 100%
+    width: 100%
     margin-right: 5px
     border-radius: 5px
-    flex: 1
+    border: none
+
 
   :global(.active)
     background: rgba(85, 83, 93, 0.97)

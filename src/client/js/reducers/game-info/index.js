@@ -25,7 +25,7 @@ import {
 // const initial = empty.map(fillButton).concat('hangman'.split('').map(fillButton))
 
 export const initialState = {
-  missedLetters: ['b', 'd', 'e', 'z', 'p', 'u', 'k', 'l', 'q', 'w', 'k', 'l', 'm'],
+  missedLetters: [],
   gameInProgress: true
 }
 
