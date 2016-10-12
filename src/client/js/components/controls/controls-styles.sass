@@ -1,6 +1,10 @@
 $activeStoneColor: rgba(85, 83, 93, 0.97)
 $missedStoneColor: lighten($activeStoneColor, 30%)
 
+$retina-break: 1450px
+$media-info: 'only screen and (min-width: $retina-break)'
+$font-size: 2em
+
 :global(.controls)
   position: relative
   height: 100%
@@ -40,9 +44,10 @@ $missedStoneColor: lighten($activeStoneColor, 30%)
   :global(.missed)
     background: $missedStoneColor
 
-
   .letter
+    @media #{$media-info}
+        font-size: $font-size * 4
     color: #FFFFFF
-    font-size: 2em
+    font-size: $font-size
     text-transform: uppercase
     align-self: center

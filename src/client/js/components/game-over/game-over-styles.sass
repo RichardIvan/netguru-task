@@ -1,3 +1,14 @@
+$retina-break: 1450px
+$media-info: 'only screen and (min-width: $retina-break)'
+
+$baseFontSize: 1em
+$headingFontSize: $baseFontSize * 4
+
+$retinaHeadingFontSize: $headingFontSize * 4
+$retinaButtonFontSize: $baseFontSize * 4
+
+$borderSize: 3px
+
 :global(.game-over-container)
   background: #3B4263
 
@@ -18,19 +29,24 @@
     text-transform: uppercase
 
   h1
+    @media #{$media-info}
+        font-size: $retinaHeadingFontSize
     color: #FFFFFF
-    font-size: 4em
+    font-size: $headingFontSize
 
   button
+    @media #{$media-info}
+        font-size: $retinaButtonFontSize
+        border: $borderSize * 2 dashed #FEB901
     color: #FEB901
     border: none
-    border: 3px dashed #FEB901
+    border: $borderSize dashed #FEB901
     border-radius: 50px 50px
     z-index: 3
     background: none
     height: 7%
     width: 12%
-    font-size: 1em
+    font-size: $baseFontSize
     position: relative
     padding: 0
     margin: 0
