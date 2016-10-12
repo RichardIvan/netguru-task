@@ -9,11 +9,9 @@ import {
   NEW_WORD
 } from '../../../actions/constants/'
 
-import initialState from '../../../reducers/game-info/'
-
-// test('initial state has gameInProgress set as true', t => {
-//   t.is(reducer().gameInProgress, true)
-// })
+test('initial state has gameInProgress set as true', t => {
+  t.is(reducer().gameInProgress, true)
+})
 
 test('the NEW_WORD action type sets gameInProgress to true', t => {
   const action = {

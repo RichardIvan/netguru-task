@@ -16,11 +16,9 @@ const rootComponent = {
       m(`#game-card.${styles['game-card']}`, [
         m(`.${styles['display-container']}`, [
           m(`.${styles['hangman']}`, [
-            // container width 405px
             m(hangmanContainer, { ...vnode.attrs })
           ]),
           m(`.${styles['game-info']}`, [
-            // you missed container
             m(gameInfoContainer, { ...vnode.attrs })
           ])
         ]),

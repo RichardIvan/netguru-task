@@ -17,7 +17,6 @@ import {
 const percentVisible = 0.3
 
 export function newWordResponse (word) {
-
   const wordArray = word.split('')
   const wordLength = word.length
   const numberOfVisibleWords = Math.ceil(wordLength * percentVisible)

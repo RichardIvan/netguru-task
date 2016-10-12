@@ -3,7 +3,7 @@
 
 import { newWordResponse } from '../../actions/game'
 
-export function newGame(dispatch) {
+export function newGame (dispatch) {
   new Promise((resolve, reject) => {
     var xhttp = new XMLHttpRequest()
     xhttp.onreadystatechange = function () {
@@ -21,10 +21,10 @@ export function newGame(dispatch) {
   })
 }
 
-export function uniqueArray (minRange, maxRange, arrayLength) {
-  var arrayLength = (arrayLength) ? arrayLength : 10
-  var minRange = (minRange !== undefined) ? minRange : 1
-  var maxRange = (maxRange !== undefined) ? maxRange : 100
+export function uniqueArray (minRange = 1, maxRange = 100, arrayLength = 10) {
+  // var arrayLength = (arrayLength) ? arrayLength : 10
+  // var minRange = (minRange !== undefined) ? minRange : 1
+  // var maxRange = (maxRange !== undefined) ? maxRange : 100
   var numberOfItemsInArray = 0
   var hash = {}
   var array = []
@@ -46,10 +46,8 @@ export function uniqueArray (minRange, maxRange, arrayLength) {
 }
 
 export function fillButton (letter: string) {
-  // console.log('aha')
-  // console.log(letter ? 'active' : '')
   return {
-    class: letter ? 'active' : '',
-    letter: letter ? letter : ''
+    class: !letter ? '' : 'active',
+    letter: !letter ? '' : letter
   }
 }

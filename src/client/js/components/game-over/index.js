@@ -3,7 +3,7 @@
 
 import m from 'mithril'
 
-import styles from './game-over-styles.sass'
+import './game-over-styles.sass'
 
 const gameOverComponent = {
   view (vnode) {

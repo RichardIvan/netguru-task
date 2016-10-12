@@ -134,12 +134,18 @@ module.exports = {
       include: path.join(__dirname, './')
     },
     {
-      test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192',
+      test: /\.(png|jpg|ttf)$/,
+      loader: 'url-loader',
+      query: {
+        name: '[path][name].[ext]',
+        context: './src/client/',
+        publicPath: '../'
+        // limit: 8192
+      },
       include: path.join(__dirname, './')
     },
     {
-      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      test: /\.(eot|svg|woff|woff2)$/,
       loader: 'file-loader',
       query: {
         name: '[path][name].[ext]',

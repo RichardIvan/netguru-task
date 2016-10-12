@@ -11,11 +11,11 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 // const Visualizer = require('webpack-visualizer-plugin')
 
 module.exports = {
-  devtool: 'hidden-source-map',
+  devtool: 'source-map',
   entry: {
     // s: './src/js/s.js',
     // 'service-worker': './src/js/service-worker.js',
-    // index: './src/js/index.js'
+    index: './src/client/js/index.js'
   },
   output: {
     path: path.join(__dirname, './dist/client'),
@@ -112,14 +112,16 @@ module.exports = {
       include: path.join(__dirname, './')
     },
     {
-      test: /\.(png|jpg)$/,
+      test: /\.(png|jpg|ttf)$/,
       loader: 'url-loader',
       query: {
-        limit: 8192
+        name: '[path][name].[ext]',
+        context: './src/client/'
+        // limit: 8192
       }
     },
     {
-      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      test: /\.(eot|svg|woff|woff2)$/,
       loader: 'file-loader',
       query: {
         name: '[path][name].[ext]',

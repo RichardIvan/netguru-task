@@ -16,17 +16,16 @@ import rightHand from '../../../imgs/right-hand.png'
 import leftLeg from '../../../imgs/left-leg.png'
 import leftFoot from '../../../imgs/left-foot.png'
 import rightLeg from '../../../imgs/right-leg.png'
-import rightFoot from '../../../imgs/left-foot.png'
 
 import {
   getNumberOfGuesses
 } from '../../selectors/game-info/'
 
 const hangmanComponent = {
-  oninit(vnode) {
+  oninit (vnode) {
     vnode.state.numberOfGuesses = getNumberOfGuesses(vnode.attrs.state)
   },
-  onbeforeupdate(vnode) {
+  onbeforeupdate (vnode) {
     vnode.state.numberOfGuesses = getNumberOfGuesses(vnode.attrs.state)
   },
   view (vnode) {
@@ -96,7 +95,7 @@ const hangmanComponent = {
           }
         }),
         m(`img.${styles['right-foot']}`, {
-          src: rightFoot,
+          src: leftFoot,
           style: {
             opacity: vnode.state.numberOfGuesses >= 10 ? 1 : 0
           }

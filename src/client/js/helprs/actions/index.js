@@ -5,11 +5,9 @@ import {
   fillButton
 } from '../game'
 
-// TODO: move to helpers
-// move to helpers
 export function fillButtons (wordArr, visibleWordsIndexes) {
+  let buttonData
   const maxIndex = 11
-  // minI
   const numberOfEmptyButtons = maxIndex - wordArr.length
   const activeButtonData = []
   const lettersToGuess = {}
@@ -49,11 +47,10 @@ export function fillButtons (wordArr, visibleWordsIndexes) {
     }
   }
 
-  let buttonData
   if (numberOfEmptyButtons > 0) {
     buttonData = new Array(numberOfEmptyButtons).fill('')
-                                    .map(fillButton)
-                                    .concat(activeButtonData)
+                                                .map(fillButton)
+                                                .concat(activeButtonData)
   } else {
     buttonData = activeButtonData
   }

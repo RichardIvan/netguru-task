@@ -7,7 +7,6 @@
 
 import {
   NEW_WORD,
-  MAX_NUMBER_OF_GUESSES,
   SUBMIT_GUESS
 } from '../../actions/constants'
 
@@ -19,7 +18,6 @@ import omit from 'lodash/omit'
 
 const array = new Array(11).fill('')
 const filledArray = array.map(fillButton)
-
 
 export function takeOutGuessedItems (guessedLetter, duh, currentLetter) {
   return guessedLetter !== currentLetter
@@ -74,14 +72,13 @@ const reducer = (state = initialState, action) => {
     case SUBMIT_GUESS: {
       const guessedLetter = action.payload.letter
       const correctGuess = state.lettersToGuess[guessedLetter]
-      console.log(state)
-      console.log(guessedLetter)
-      console.log(correctGuess)
+
       if (!Array.isArray(correctGuess)) {
         const numberOfIncorrectGuesses = state.numberOfIncorrectGuesses + 1
         const shouldGameEnd = numberOfIncorrectGuesses < 11
         const shouldAddMissedLetter = state.missedLetters.indexOf(guessedLetter) === -1
         let newMissedLetters
+
         if (shouldAddMissedLetter) {
           newMissedLetters = state.missedLetters.slice(0)
           newMissedLetters.push(guessedLetter)
@@ -93,8 +90,6 @@ const reducer = (state = initialState, action) => {
           gameInProgress: shouldGameEnd
         }
       } else {
-        console.log('lol yeah')
-
         const remaindingLettersToGuess = omit(state.lettersToGuess, guessedLetter)
         const numberOfRemainingLettersToguess = Object.keys(remaindingLettersToGuess).length
 
@@ -105,7 +100,6 @@ const reducer = (state = initialState, action) => {
           gameInProgress: numberOfRemainingLettersToguess > 0
         }
       }
-      return state
     }
     default:
       return state

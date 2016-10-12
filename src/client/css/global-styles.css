@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-body {
+body, :global(#app) {
   display: flex;
   justify-content: center;
   position: absolute;
