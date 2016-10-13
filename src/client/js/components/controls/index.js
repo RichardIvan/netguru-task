@@ -17,7 +17,7 @@ export function createButton (elSize = 75, data) {
         height: `${elSize}px`,
         width: `${elSize}px`
       }
-    }, data.letter))
+    }, m('span', data.letter)))
 }
 
 const controlsComponent = {
@@ -33,7 +33,7 @@ const controlsComponent = {
       }
     },
       [
-        parentVnode.attrs.buttonData.map((item) => {
+        parentVnode.attrs.buttonData.map((item, index) => {
           return createButton(parentVnode.state.elementWidth, item)
         })
       ]))

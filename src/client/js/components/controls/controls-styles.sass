@@ -5,6 +5,20 @@ $retina-break: 1450px
 $media-info: 'only screen and (min-width: $retina-break)'
 $font-size: 2em
 
+@keyframes change-color
+  // 0%
+  //   background: $activeStoneColor
+  1%
+    background: #E6E6E7
+  100%
+    background: $activeStoneColor
+
+@keyframes show-font
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
 :global(.controls)
   position: relative
   height: 100%
@@ -39,7 +53,10 @@ $font-size: 2em
     margin-right: 0
 
   :global(.active)
-    background: $activeStoneColor
+    // background: $activeStoneColor
+    animation: change-color .2s
+    // animation-delay: .2s
+    animation-fill-mode: forwards
 
   :global(.missed)
     background: $missedStoneColor
@@ -51,3 +68,10 @@ $font-size: 2em
     font-size: $font-size
     text-transform: uppercase
     align-self: center
+
+  span
+    opacity: 0
+    display: inline-block
+    animation: show-font .4s
+    animation-fill-mode: forwards
+    animation-delay: .6s

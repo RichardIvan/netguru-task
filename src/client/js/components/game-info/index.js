@@ -6,7 +6,13 @@ import m from 'mithril'
 import styles from './game-info-styles.sass'
 
 export function createMissedLetter (letter) {
-  return m('li', m(`span.${styles.letter}`, letter))
+  return m('li', m(`span.${styles.letter}`, {
+    oncreate(vnode) {
+      setTimeout(() => {
+        vnode.dom.classList.add('animated')
+      }, 200)
+    }
+  }, letter))
 }
 
 const gameInfoComponent = {

@@ -1,6 +1,7 @@
 $retina-break: 1450px
 $media-info: '(min-width: $retina-break)'
 $font-size: 3em
+$transitionCurve: cubic-bezier(0.4, 0.0, 0.2, 1)
 
 :global(h3)
   @media #{$media-info}
@@ -29,3 +30,10 @@ $font-size: 3em
   color: #4D71FA
   font-size: $font-size
   padding: 0
+  display: inline-block
+  opacity: 0
+
+.letter:global(.animated)
+  transform: translateY(10px)
+  opacity: 1
+  transition: transform .1s $transitionCurve, opacity 0.1s $transitionCurve
