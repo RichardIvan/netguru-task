@@ -3,7 +3,7 @@
 
 import test from 'ava'
 
-import reducer, { initialState } from '../'
+import reducer from '../'
 
 import {
   submitGuess,

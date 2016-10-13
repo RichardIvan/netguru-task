@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 // import thunkMiddleware from 'redux-thunk'
-import createLogger from 'redux-logger'
+// import createLogger from 'redux-logger'
 
 import rootReducer from '../reducers'
 // import { rootSaga } from '../sagas'
@@ -14,7 +14,7 @@ import m from 'mithril'
 const middleware = [
   // sagaMiddleware,
   // thunkMiddleware,
-  createLogger()
+  // createLogger()
 ]
 
 const enhancer = applyMiddleware(...middleware)

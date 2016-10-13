@@ -14,7 +14,7 @@ import {
 test(t => {
   const $out = gameInProgress(true)
   const $out2 = gameInProgress(false)
-  
+
   const $expected = {
     type: GAME_PROGRESS,
     payload: {

@@ -11,8 +11,8 @@ import {
 } from '../'
 
 test('fillButton is correct', t => {
-  const $out = fillButton('a')
-  const $out2 = fillButton()
+  const $out = fillButton('active')
+  const $out2 = fillButton('active')
 
   const $expected = {
     class: 'active',
@@ -23,8 +23,8 @@ test('fillButton is correct', t => {
     letter: ''
   }
 
-  t.deepEqual($out, $expected)
-  t.deepEqual($out2, $expected2)
+  t.deepEqual($out('a'), $expected)
+  t.deepEqual($out2(), $expected2)
 })
 
 let requests
@@ -35,21 +35,24 @@ test.beforeEach(t => {
   window.XMLHttpRequest.onCreate = function (req) { requests.push(req) }
 })
 
-test('newGame is correct', t => {
+test('newGame is correct', async t => {
   t.plan(1)
 
   const dispatch = sinon.spy()
   newGame(dispatch)
 
-  return Promise.resolve().then(() => {
+  const value = () => Promise.resolve().then(() => {
     requests[0].respond(
       200,
       { 'Content-Type': 'application/json' },
       JSON.stringify({ word: 'sofake' })
     )
   }).then(() => {
-    t.is(dispatch.firstCall.args[0].payload.word, 'sofake')
+    return dispatch.firstCall.args[0].payload.word
+    // t.is(dispatch.firstCall.args[0].payload.word, 'sofake')
   })
+
+  t.is(await value(), 'sofake')
 })
 
 test.afterEach(t => {

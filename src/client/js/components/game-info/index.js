@@ -7,7 +7,7 @@ import styles from './game-info-styles.sass'
 
 export function createMissedLetter (letter) {
   return m('li', m(`span.${styles.letter}`, {
-    oncreate(vnode) {
+    oncreate (vnode) {
       setTimeout(() => {
         vnode.dom.classList.add('animated-missin-letter')
       }, 200)

@@ -5,6 +5,8 @@ import {
   fillButton
 } from '../game'
 
+const fillButtonWithActive = fillButton('active')
+
 export function fillButtons (wordArr, visibleWordsIndexes) {
   let buttonData
   const maxIndex = 11
@@ -49,7 +51,7 @@ export function fillButtons (wordArr, visibleWordsIndexes) {
 
   if (numberOfEmptyButtons > 0) {
     buttonData = new Array(numberOfEmptyButtons).fill('')
-                                                .map(fillButton)
+                                                .map(fillButtonWithActive)
                                                 .concat(activeButtonData)
   } else {
     buttonData = activeButtonData

@@ -27,7 +27,6 @@ export function takeOutGuessedItems (guessedLetter, duh, currentLetter) {
 }
 
 export function fillButtonByIndexes (classTofill) {
-
   const fillButtonWithSetClass = fillButton(classTofill)
 
   return (array, indexes, letter) => {
