@@ -33,7 +33,7 @@ $transitionCurve: cubic-bezier(0.4, 0.0, 0.2, 1)
   display: inline-block
   opacity: 0
 
-.letter:global(.animated)
-  transform: translateY(10px)
+:global(.animated-missin-letter)
+  display: inline-block
   opacity: 1
-  transition: transform .1s $transitionCurve, opacity 0.1s $transitionCurve
+  transition: opacity 0.1s $transitionCurve

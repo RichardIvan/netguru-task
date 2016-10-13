@@ -9,7 +9,7 @@ export function createMissedLetter (letter) {
   return m('li', m(`span.${styles.letter}`, {
     oncreate(vnode) {
       setTimeout(() => {
-        vnode.dom.classList.add('animated')
+        vnode.dom.classList.add('animated-missin-letter')
       }, 200)
     }
   }, letter))
