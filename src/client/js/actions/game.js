@@ -45,7 +45,7 @@ export function submitGuess (letter) {
   }
 }
 
-export function gameInProgress(status) {
+export function gameInProgress (status) {
   return {
     type: GAME_PROGRESS,
     payload: {
